@@ -2,12 +2,6 @@ name: Rancher Best Practice Documentation
 description: Documentation for Rancher Best Practices
 
 
-# Changing these will require updates to Dockerfile
-URL: http://rancher.github.io/best-practice-guide
-baseurl: ""
-
-exclude: []
-
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -17,3 +11,5 @@ permalink: pretty
 
 gems:
   - jekyll-redirect-from
+
+# Dockerfile will add baseurl and url
