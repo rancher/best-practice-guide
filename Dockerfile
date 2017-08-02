@@ -1,12 +1,13 @@
-FROM ruby:2.2 AS builder
-ADD . /site
-RUN cd /site && \
-    sed -i 's/rancher\.github\.io/rancher\.com/' ./_config.yml && \
-    sed -i 's/^\(baseurl:\)\(.*$\)/\1 "\/docs"/' ./_config.yml && \
-    bundle install && \
-    bundle exec jekyll build
+FROM jekyll/jekyll:3.4 AS builder
+#FROM jekyll/jekyll:3.4
+WORKDIR /build
+COPY . /build
+RUN echo 'URL: "http://rancher.com"' >> _config.yml \
+    && echo 'baseurl: "/best-practice-guide"' >> _config.yml \
+    && jekyll build
 
 FROM nginx
-COPY --from=builder /site/_site /usr/share/nginx/html/docs
-COPY --from=builder /site/favicon.png /usr/share/nginx/html/favicon.png
-RUN rm /usr/share/nginx/html/docs/Gemfile /usr/share/nginx/html/docs/Gemfile.lock
+ENV DOCROOT /usr/share/nginx/html
+COPY --from=builder /build/_site $DOCROOT/best-practice-guide
+COPY --from=builder /build/favicon.png $DOCROOT/favicon.png
+RUN mv $DOCROOT/best-practice-guide/best-practice/v1.0 $DOCROOT/best-practice-guide/
