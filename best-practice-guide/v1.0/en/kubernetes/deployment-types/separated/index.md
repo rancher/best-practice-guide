@@ -18,7 +18,7 @@ lang: en
 
 * Create a Cattle environment 
 * Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true
- **If you care about backups, [Configuring Remote Backups]({{site.baseurl}}/best-practice/{{page.version}}/{{page.lang}}/kubernetes/management/remote-backups)**
+ **If you care about backups, [Configuring Remote Backups]({{site.baseurl}}/best-practice-guide/{{page.version}}/{{page.lang}}/kubernetes/management/remote-backups)**
 
 
 * If you don’t want pods scheduled on these hosts add label nopods=true.
@@ -30,7 +30,7 @@ lang: en
 ### Instructions (Rancher v1.1.X and older)
 
 * Create a Cattle environment. 
-* Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true **If you care about backups, [Configuring Remote Backups]({{site.baseurl}}/best-practice/{{page.version}}/{{page.lang}}/kubernetes/management/remote-backups)**
+* Add 3 hosts with 1 CPU, >=1.5GB RAM, >=20GB DISK. Label these hosts etcd=true **If you care about backups, [Configuring Remote Backups]({{site.baseurl}}/best-practice-guide/{{page.version}}/{{page.lang}}/kubernetes/management/remote-backups)**
 * If you don’t want pods scheduled on these hosts add label nopods=true.
 * Add 2 hosts with >=1 CPU and >=2GB RAM. Label these hosts orchestration=true **If you don’t want pods scheduled on these hosts, add label ```nopods=true```**
 * Add 1+ hosts without any special labels. Resource requirements vary by workload. 
