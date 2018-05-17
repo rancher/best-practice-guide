@@ -1,0 +1,32 @@
+baseURL = ""
+languageCode = "en-us"
+title = "Rancher Labs Best Practice Guide"
+theme = "rancher-website-theme"
+themesDir = "node_modules"
+pluralizeListTitles = false
+
+enableRobotsTXT = true
+pygmentsCodeFences=true
+pygmentsCodeFencesGuessSyntax=true
+
+[permalinks]
+  inside-pages = "/:filename/"
+
+[params]
+  addThis = "ra-5af1cc6793d86bfb"
+
+[outputFormats.Search]
+baseName = "search"
+isPlaintext = true
+mediaType = "application/json"
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "Search"]
+page = ["HTML", "Search"]
+
+[params.search]
+vars = ["title","summary","date","publishdate","expirydate","permalink"]
+params = ["categories","tags"]
+
+

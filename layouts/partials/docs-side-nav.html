@@ -1,0 +1,20 @@
+<div class="tree-nav invisible">
+  <ul>
+    {{ template "section-tree-nav" ($.Scratch.Get "secondLevel") }}
+  </ul>
+</div>
+{{ define "section-tree-nav" }}
+  {{ range .Sections}}
+    <li class="tree-nav-item"><a href="{{ .RelPermalink}}">{{ .Title }}</a>
+      {{if gt (len .Sections) 0}}
+        <i class="material-icons pull-right expand-toggle">add_box</i>
+        <ul class="tree-nav-sublist hide">
+          {{ range .Pages }}
+            <li class="tree-nav-item-child"><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
+          {{ end }}
+          {{ template "section-tree-nav" . }}
+        </ul>
+      {{end}}
+    </li>
+  {{ end }}
+{{ end }}

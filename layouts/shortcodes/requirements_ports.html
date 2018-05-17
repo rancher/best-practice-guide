@@ -1,0 +1,52 @@
+<div>
+	<h5>Port Requirements</h5>
+	<p>Open the following ports on your Linux hosts.</p>
+	<table>
+	    <tr>
+	        <th>Protocol</th>
+	        <th>Port range</th>
+	        <th>Purpose</th>
+	    </tr>
+	    <tr>
+	        <td>tcp</td>
+	        <td>22</td>
+	        <td>ssh server</td>
+	    </tr>
+		<tr>
+			<td>tcp</td>
+	        <td>80</td>
+	        <td>Rancher Server/ingress</td>
+	    </tr>
+	    <tr>
+			<td>tcp</td>
+	        <td>443</td>
+	        <td>Rancher Server/ingress</td>
+	    </tr>
+	    <tr>
+			<td>tcp</td>
+	        <td>6443</td>
+	        <td>kubernetes api server</td>
+	    </tr>
+	    <tr>
+			<td>tcp</td>
+	        <td>2379-2380</td>
+	        <td>etcd server client api</td>
+	    </tr>
+		<tr>
+			<td>tcp</td>
+	        <td>10250-10256</td>
+	        <td>kubernetes components</td>
+	    </tr>
+		<tr>
+		   <td>tcp</td>
+		   <td>30000-32767</td>
+		   <td>nodeport services</td>
+	   </tr>
+	    <tr>
+	        <td>udp</td>
+	        <td>8472</td>
+	        <td>canal</td>
+	    </tr>
+	</table>
+<br/>
+</div>

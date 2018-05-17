@@ -1,4 +1,3 @@
-scripts
-.drone*
-.git
-.cache
+/public
+/static
+/node_modules

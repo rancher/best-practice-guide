@@ -1,0 +1,28 @@
+FROM rancher/docs:build
+
+VOLUME ["/site"]
+WORKDIR /run
+COPY package.json /run/
+
+RUN  ln -s /site/config.toml /run \
+  && ln -s /site/.eslintrc.js /run \
+  && ln -s /site/netlify.toml /run \
+  && ln -s /site/archetypes /run \
+  && ln -s /site/content /run \
+  && ln -s /site/data /run \
+  && ln -s /site/layouts /run \
+  && ln -s /site/src /run \
+  && ln -s /site/themes /run \
+  && ln -s /site/scripts /run
+
+# gulp doesn't like symlinks
+COPY gulpfile.babel.js /run/
+
+ADD https://github.com/rancherlabs/website-theme/archive/master.tar.gz master.tar.gz
+RUN mkdir -p /run/node_modules/rancher-website-theme && tar -xzf master.tar.gz --strip 1 -C /run/node_modules/rancher-website-theme && rm master.tar.gz
+
+# Expose default hugo port
+EXPOSE 9001
+
+ENTRYPOINT ["gulp"]
+CMD ["dev"]
