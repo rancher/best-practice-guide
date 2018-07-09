@@ -15,18 +15,16 @@ pygmentsCodeFencesGuessSyntax=true
 [params]
   addThis = "ra-5af1cc6793d86bfb"
 
-[outputFormats.Search]
-baseName = "search"
+[outputFormats.Algolia]
+baseName = "algolia"
 isPlaintext = true
 mediaType = "application/json"
 notAlternative = true
 
 [outputs]
-home = ["HTML", "RSS", "Search"]
-page = ["HTML", "Search"]
+home = ["HTML", "RSS", "Algolia"]
+# page = ["HTML", "Algolia"]
 
-[params.search]
-vars = ["title","summary","date","publishdate","expirydate","permalink"]
-params = ["categories","tags"]
-
-
+[params.algolia]
+vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+params = ["categories", "tags"]

@@ -3,6 +3,8 @@
 // 7. node
 @import
 '~tingle.js/src/tingle',
+'~instantsearch.js/dist/instantsearch.nomin',
+'~instantsearch.js/dist/instantsearch-theme-algolia.nomin',
 '~ml-stack-nav/src/ml-stack-nav';
 
 // 1. Configuration and helpers
@@ -45,7 +47,8 @@
 '../../node_modules/rancher-website-theme/static/scss/components/dropdown',
 '../../node_modules/rancher-website-theme/static/scss/components/forms',
 '../../node_modules/rancher-website-theme/static/scss/components/tree',
-'../../node_modules/rancher-website-theme/static/scss/components/tabs';
+'../../node_modules/rancher-website-theme/static/scss/components/tabs',
+'../../node_modules/rancher-website-theme/static/scss/components/search';
 
 // 6. Page-specific styles
 @import
