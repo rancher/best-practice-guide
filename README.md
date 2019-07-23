@@ -1,3 +1,5 @@
+***This content has been folded into the Docs site, please see https://github.com/rancher/docs***
+
 # Rancher Labs Documentation
 
 This README file includes information pertaining to the Best Practices documentation for both Rancher and Rancher OS.
